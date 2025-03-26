@@ -1,4 +1,7 @@
 body {
     background-color: #00183b;
-    color: white;
+}
+
+div#sfondo-passeggero {
+    background-color: #00df6b;
 }

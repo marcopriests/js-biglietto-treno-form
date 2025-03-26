@@ -12,58 +12,74 @@
 
 <body>
 
-    <div class="container">
-        <h2>Calcola il prezzo del biglietto</h2>
+    <div class="container p-5 mt-5">
+        <div class="bg-light p-5 my-5 rounded-4">
+            <h2 class="text-center mb-5 fw-bold text-uppercase fs-4">Calcola il prezzo del biglietto</h2>
 
-        <form id="form" action="">
-            <div class="row">
-                <div class="col">
-                    <input type="text" placeholder="Inserisci il tuo nome" id="nome">
+            <form id="form" class="" action="">
+                <div class="row mb-5">
+                    <div class="col">
+                        <label for="nome" class="form-label">Inserisci il tuo nome</label>
+                        <input class="form-control" type="text" required id="nome" placeholder="John Doe">
+                    </div>
+
+                    <div class="col">
+                        <label for="km" class="form-label">Inserisci il numero dei chilometri</label>
+                        <input class="form-control" type="number" required id="km" placeholder="100">
+                    </div>
+
+                    <div class="col">
+                        <label for="age" class="form-label" required>Inserisci la tua fascia d'età</label>
+                        <select class="form-control" name="age" id="age">
+                            <option value="Default" selected>Seleziona</option>
+                            <option value="Minorenne">Minorenne</option>
+                            <option value="Adulto">Adulto</option>
+                            <option value="Over">Over 65</option>
+                        </select>
+                    </div>
                 </div>
-    
-                <div class="col">
-                    <input type="number" placeholder="Numero di km" id="km">
+
+                <div class="m-2 d-flex justify-content-center">
+                    <button class="btn btn-primary m-2" id="bottone">Invia</button>
+
+                    <button class="btn btn-outline-primary m-2" id="cancel">Annulla</button>
                 </div>
-    
-                <div class="col">
-                    <select name="age" id="age">
-                        <option value="Default" selected>Seleziona fascia di età</option>
-                        <option value="Minorenne">Minorenne</option>
-                        <option value="Adulto">Adulto</option>
-                        <option value="Over">Over 65</option>
-                    </select>
-                </div>
-    
+            </form>
+        </div>
+
+        <div class="bg-light p-5 my-5 rounded-4">
+            <h2 class="text-center mb-5 fw-bold text-uppercase fs-4">Il tuo biglietto</h2>
+
+            <div class="content">
+                <h3 class="fw-semibold fs-4 mb-3">Dettaglio passeggeri</h3>
                 <div class="row">
-                    <div class="col">
-                        <button id="bottone">Invia</button>
+                    <div class="col-4 p-3" id="sfondo-passeggero">
+                        <h3>Nome del passeggero</h3>
+                        <p class="fs-5 fw-bold text-uppercase" id="nome-biglietto">Nome Cognome</p>
                     </div>
-    
-                    <div class="col">
-                        <button id="cancel">Annulla</button>
+
+                    <div class="col-8 d-flex justify-content-between">
+                        <div class="">
+                            <h5 class="fw-bold mb-5">Offerta</h5>
+
+                            <p id="tipo-biglietto">tipo di biglietto</p>
+                        </div>
+                        <div class="">
+                            <h5 class="fw-bold mb-5">Distanza</h5>
+
+                            <p id="distanza-biglietto">distanza inserita</p>
+                        </div>
+                        <div class="">
+                            <h5 class="fw-bold mb-5">Prezzo</h5>
+
+                            <p id="prezzo-biglietto">prezzo del biglietto</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="container">
-        <h2>Il tuo biglietto</h2>
-
-        <div class="content">
-            <h3>Dettaglio passeggeri</h3>
-            <div class="row">
-                <div class="col-4 bg-dark">
-                    <h3>Nome del passeggero</h3>
-                    <p>Nome Cognome</p>
-                </div>
-
-                <div class="col-8">
-
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <p id="risultato"></p>

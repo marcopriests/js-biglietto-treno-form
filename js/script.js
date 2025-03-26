@@ -6,8 +6,10 @@ const age = document.getElementById('age')
 const bottone = document.getElementById('bottone')
 const cancel = document.getElementById('cancel')
 
-const risultato = document.getElementById('risultato')
-
+const nomeBiglietto = document.getElementById('nome-biglietto')
+const tipoBiglietto = document.getElementById('tipo-biglietto')
+const distanzaBiglietto = document.getElementById('distanza-biglietto')
+const prezzoBiglietto = document.getElementById('prezzo-biglietto')
 
 //creo la costante che indica il prezzo base del biglietto per km
 const price = 0.21
@@ -15,23 +17,37 @@ let ticketPrice = 0
 
 
 //comportamento bottone
-bottone.addEventListener('click', function(event){
+bottone.addEventListener('click', function (event) {
     event.preventDefault()
+
+    nomeBiglietto.innerHTML = nome.value
+    distanzaBiglietto.innerHTML = km.value
 
     if (age.value == "Minorenne") {
         ticketPrice = price * km.value * 0.8
 
-        risultato.innerText = "Hai diritto allo sconto minorenni. Il prezzo del biglietto è di " + ticketPrice.toFixed(2) + "€"
+        tipoBiglietto.innerHTML = "Ridotto Minorenni"
+        prezzoBiglietto.innerHTML = ticketPrice.toFixed(2) + "€"
 
     } else if (age.value == "Over") {
         ticketPrice = price * km.value * 0.6
 
-        risultato.innerText = "Hai diritto allo sconto per over 65. Il prezzo del biglietto è di " + ticketPrice.toFixed(2) + "€"
-
+        tipoBiglietto.innerHTML = "Ridotto Over 65"
+        prezzoBiglietto.innerHTML = ticketPrice.toFixed(2) + "€"
     } else {
         ticketPrice = price * km.value
 
-        risultato.innerText = "Non hai accesso a sconti. Il prezzo del biglietto è di " + ticketPrice.toFixed(2) + "€"
-        
+        tipoBiglietto.innerHTML = "Biglietto Intero"
+        prezzoBiglietto.innerHTML = ticketPrice.toFixed(2) + "€"
     }
+
+    nome.value = ''
+    km.value = ''
+    age.value = 'Default'
+})
+
+cancel.addEventListener('click', function () {
+    nome.value = ''
+    km.value = ''
+    age.value = 'Default'
 })
