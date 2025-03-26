@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <title>Boolean Trains</title>
 </head>
+
 <body>
 
-    <input type="number" placeholder="Inserisci la tua età" id="age">
-    <input type="number" placeholder="Numero di km" id="km">
-    <button id="bottone">Invia</button>
+    <form id="form" action="">
+        <div class="row">
+            <div class="col">
+                <input type="text" placeholder="Inserisci il tuo nome" id="nome">
+            </div>
+
+            <div class="col">
+                <input type="number" placeholder="Numero di km" id="km">
+            </div>
+
+            <div class="col">
+                <select name="age" id="age">
+                    <option value="Default" selected>Seleziona fascia di età</option>
+                    <option value="Minorenne">Minorenne</option>
+                    <option value="Adulto">Adulto</option>
+                    <option value="Over">Over 65</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button id="bottone">Invia</button>
+                </div>
+
+                <div class="col">
+                    <button id="cancel">Annulla</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <p id="risultato"></p>
 
 
 
 
     <script src="./js/script.js"></script>
 </body>
+
 </html>
