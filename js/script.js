@@ -26,10 +26,4 @@ bottone.addEventListener('click', function(){
         console.log("Non hai accesso a sconti. Il prezzo del biglietto è di " + ticketPrice.toFixed(2) + "€")
         
     }
-
-    console.log(age.value)
-    console.log(km.value)
-
-
-    console.log('cliccato')
 })
